@@ -1,0 +1,467 @@
+/** RESESTS **/
+* {
+    margin: 0 auto;
+}
+
+html {
+    font-size: 62.5%;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: overlay;
+}
+
+ div {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+ }
+
+/** TOP BANNER **/
+.bannerDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    width: 100vw;
+    position: relative;
+    background-color: black;
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.49);
+}
+
+.bannerIMG {
+    position: absolute;
+    height: 30vh;
+    width: 100vw;
+    background-image: url("libraryBanner.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+    z-index: 2;  
+}
+
+.bannerContent {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+
+.bannerContent h1 {
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 5rem;
+    letter-spacing: 3px;
+    margin-left: 5px;
+}
+
+
+.bannerContent img {
+    height: 6.5rem;
+}
+
+.horizontalDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin-bottom: 15px;
+}
+
+.search input {
+    width: 30vw;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px 1px rgba(255, 255, 255, 0.49);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.75rem;
+    padding: 5px;
+    background-image: url("search.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right 5px center;
+}
+
+.search input:focus {
+    outline: none;
+}
+
+#search {
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.75rem;
+    padding: 5px 20px;
+    background-image: linear-gradient(to top, #af8638, #be933f, #cea047, #dead4e, #eeba56);
+}
+
+#search:hover {
+    background-image: linear-gradient(to top, #926332, #a47134, #b58036, #c69038, #d6a039);
+    cursor: pointer;
+}
+
+#add {
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fa3a28;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 600;
+    font-size: 2rem;
+    padding: 10px 30px;
+}
+
+#add:hover {
+    background-color: #cc3a2d;
+    cursor: pointer;
+}
+
+#add img {
+    padding-left: 5px;
+    height: 2rem;
+}
+
+
+/** BODY **/
+body {
+    overflow-y: scroll;
+    margin-right: -100px;
+    padding-right: 100px;
+    max-width: 100%;
+    height: 100vh;
+    background-color: #ebe9d8;
+}
+
+.book {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.coverImg {
+    filter: drop-shadow(0 0 5px #000000);
+    width: 25rem;
+    min-height: 34vh;
+    max-height: 34vh;
+    margin-bottom: 1vh;  
+    position: relative;
+}
+
+.finished {
+    content: "";
+    z-index: 1;
+    overflow: hidden;
+    position: absolute;
+    height: 80px;
+    width: 100px;
+}
+
+.finished::after {
+    position: absolute; 
+    content: "read";
+    top: 10px; 
+    left: -40px; 
+    transform: translate(-50%, -50%); 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2rem; 
+    letter-spacing: 0.1rem; 
+    color: white;
+    background-color: rgba(221, 14, 14, 0.897);
+    padding: 5px 40px; 
+    z-index: 2; 
+    text-transform: uppercase;
+    transform: rotate(-45deg); 
+}
+
+.buttonsDiv {
+    position: absolute;
+    z-index: 1;
+    width: 3vw;
+    height: 200px;
+    margin-left: -2.75vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#bookContainer {
+    width: 80vw;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.title {
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+.author {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 13px;
+}
+
+.banner {
+    background-image: url("banner.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 3.5vh;
+    width: 13vw;
+    position: absolute;
+    display: block;
+    margin-top: -25px;
+    margin-left: 100px;
+    filter: drop-shadow(0 0 5px #000000);
+}
+
+.banner p {
+    height: 3.5vh;
+    display: flex;
+    padding-left: 3vw;
+    align-items: center;
+    margin: 0 auto;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 14px;
+    letter-spacing: 5px;
+    color: white;
+}
+
+.starRating div {
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.starRating p, .addedDate {
+    display: inline;
+    font-family: "Arial", Gadget, sans-serif;
+    font-size: 12px;
+    margin-left: 2px;
+}
+
+.addedDate {
+    margin: 0 auto;
+}
+
+.starRating img {
+    width: 2rem;
+    filter: drop-shadow(0 0 1px #000000);
+}
+
+.buttonsDiv button {
+    background: none;
+    border: none;
+}
+
+.favButton img, .unfavButton img, .finButton img, .trashButton img, .commentButton img{
+    width: 2vw;
+    filter: drop-shadow(0 0 1px #818181);
+    transition: all .2s ease-in-out; 
+}
+
+.commentButton {
+    transform: "scale(-2,2)"
+}
+
+.finButton img {
+    width: 1.75vw;
+}
+
+.favButton img:hover, .unfavButton img:hover, .finButton img:hover, .trashButton img:hover, .commentButton img:hover {
+    filter:brightness(100) drop-shadow(0 0 2px #818181) ;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+/** DIALOG BOX **/
+
+#addBookDialog, #bookCommentsDialog {
+    margin: auto;
+    filter: drop-shadow(0 0 75px #000000);
+    border: none;
+    border-radius: 5px;
+    padding: 2rem;
+    width: 30vw;
+}
+
+#addBookDialog h2, #bookTitleComments {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2.4rem;
+    letter-spacing: 3px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+#addBookForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30vw;
+}
+
+#addBookForm div {
+    display: flex;
+    margin: 1rem 0;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+#addBookForm .comments {
+    align-items: center;
+}
+
+#addBookForm label {
+    display: flex;
+    font-family: "Arial", Gadget, sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 7vw;
+    padding-right: 2rem;
+}
+
+#addBookForm select, #addBookForm textarea, #savedComment {
+    border: 1px solid #a5a5a5;
+    width: 14vw;
+    box-sizing: border-box;
+    font-family: "Arial", Gadget, sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#addBookForm textarea {
+    height: 20vh;
+}
+
+#addBookForm p {
+    margin: 0;
+    color: #cc3a2d;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#addBookForm input[type=text] {
+    width: 14vw;
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid #a5a5a5;
+    border-radius: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.75rem;
+    padding: 5px;
+}
+
+#addBookForm input[type=text]:hover, #addBookForm input[type=text]:focus, #addBookForm select:hover, #addBookForm select:focus {
+    outline: none;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.49);
+}
+
+#addBookForm input[type=file] {
+    width: 14vw;
+}
+
+.dialogButtons {
+    width: 15vw;
+}
+
+.dialogButtons button, #editBtn, #closeBtn {
+    border: none;
+    border-radius: 5px;
+    background-color: #fa3a28;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding: 10px 30px;
+}
+
+#cancelBtn, #closeBtn {
+    background-color: #6e3e39;
+}
+
+.bookComments {
+    display: flex;
+    flex-direction: column;
+    height: 30vh;
+    justify-content: space-between;
+}
+
+#savedComment {
+    width: 20vw;
+    height: 20vh;
+    margin-bottom: 10px;
+}
+
+/*************************************************
+***** MEDIA *************************************/
+
+@media only screen and (max-width: 600px) {
+    #bookContainer {
+        width: 80vw;
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px 0;
+    }
+
+    .banner {
+        height: 4vh;
+        width: 40vw;
+    }
+
+    .banner p {
+        height: 3.5vh;
+        display: flex;
+        padding-left: 10vw;
+        align-items: center;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .search {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .search input {
+        width: 70vw;
+        margin-bottom: 5px;
+    }
+
+    #search {
+        margin: 0 auto;
+    }
+
+    #bookContainer {
+        width: 80vw;
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 0;
+    }
+
+    .banner {
+        height: 4vh;
+        width: 30vw;
+    }
+
+    .banner p {
+        height: 3.5vh;
+        display: flex;
+        padding-left: 5vw;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+}
