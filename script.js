@@ -61,6 +61,21 @@ submitButton.addEventListener("click", async (e) => { // Add new book event
     addDialog.close();
 });
 
+class Book {
+    constructor(title, author, genre, comments, cover, rating, favorite, finished) {
+        this.title = title;
+        this.author = author;
+        this.genre = genre;
+        this.comments = comments;
+        this.cover = cover;
+        this.rating = rating;
+        this.favorite = favorite;
+        this.finished = finished;
+        this.added = new Date();
+    };
+};
+
+/*
 function Book(title, author, genre, comments, cover, rating, favorite, finished) {
     this.title = title;
     this.author = author;
@@ -71,7 +86,7 @@ function Book(title, author, genre, comments, cover, rating, favorite, finished)
     this.favorite = favorite;
     this.finished = finished;
     this.added = new Date();
-}
+}*/
 
 myLibrary = demoLibrary.map( // Src scriptDemo
     (book) =>
@@ -195,12 +210,6 @@ function createBookCard(book) {
     bookContainer.appendChild(bookCard);
 }
 
-
-
-
-
-
-
 const commentClose = document.getElementById("closeBtn");
 const commentDialog = document.getElementById("bookCommentsDialog");
 
@@ -209,17 +218,6 @@ const editComment = document.getElementById("editBtn");
 commentClose.addEventListener("click", () => {
     bookCommentsDialog.close();
 })
-
-
-
-
-
-
-
-
-
-
-
 
 function addStarRating(rating) {
     let starDiv = document.createElement("div");
